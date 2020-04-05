@@ -1,27 +1,29 @@
 public class ConditionalStatement {
     public static void main(String[] args) {
-        int howOld = 30;
-        boolean isAge = howOld > 20;
-        if(isAge == true) {
+        int age = 30;
+        if(age > 20) {
             System.out.println("You are already an adult.");
-        } 
-        String muzhik = "male";
-        boolean isSex = muzhik == "male";
-        if(isSex == true) {
+        }
+
+        String he = "male";
+        boolean isMail = true;
+        if(isMail) {
             System.out.println("Hello, brother!");
         }
-        String neMuzhik = "noMale";
-        boolean isSex1 = neMuzhik == "noMale";
-        if(isSex1 == true) {
+
+        String she = "noMale";
+        boolean isNoMale = true;
+        if(isNoMale) {
             System.out.println("Women! Take care of man.");
         }
-        double h = 1.92;
-        boolean isHeight = h < 1.8;
-        if(isHeight == true) {
+
+        float height = 1.92f;
+        if(height < 1.8) {
             System.out.println("You are not tall.");
         } else {
-            System.out.println("Your height " + h + " m is above average.");
+            System.out.println("Your height " + height + " m is above average.");
         }
+
         char firstLetter = 'I';
         if(firstLetter == 'M') {
             System.out.println("Please, open the folder C: \\ M on your computer.");

@@ -7,7 +7,7 @@ public class Variable {
         float taktFrequency = 2.9f; 
         double usedVirtualMemory = 1.917794254234246; 
         char systemDisk = 'c';
-        boolean isresult = true;
+        boolean isResult = true;
         
         System.out.println(ram);
         System.out.println(virtualMemory);
@@ -16,6 +16,6 @@ public class Variable {
         System.out.println(taktFrequency);
         System.out.println(usedVirtualMemory);
         System.out.println(systemDisk);
-        System.out.println(isresult);
+        System.out.println(isResult);
     }
 }
