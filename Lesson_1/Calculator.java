@@ -4,7 +4,7 @@ public class Calculator {
         int b = 5;
         char sign = '^';
         int result;
-        
+
         if(sign == '+') {
             result = a + b;
             System.out.println(a + " + " + b + " = " + result);
@@ -21,7 +21,7 @@ public class Calculator {
         } else if(sign == '^') {
             result = a;
             for(int i = 1; i <= b; i++) {
-                result *= a;
+            result *= a;
             }
             System.out.println(a + " to the " + b + "th degree is equal " + result);
         } else { 
