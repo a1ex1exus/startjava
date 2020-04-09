@@ -1,45 +1,32 @@
 public class Calculator {
     public static void main(String[] args) {
+        int a = 33;
+        int b = 7;
+        char sign = '/';
+        int result;
+        float resultDivision;
 
-        int a = 10;
-        int b = 5;
-        boolean isPlus = false;
-        boolean isMinus = false;
-        boolean isMultiply = false;
-        boolean isDivision = false;
-        boolean isExponention = true;
-        boolean isRemainder = false;
-        int sum;
-        int diff;
-        int multip;
-        int divis;
-        int mod;
-
-        if(isPlus) {
-            sum = a + b;
-            System.out.println(a + " + " + b + " = " + sum);
-        }
-        else if(isMinus) {
-            diff = a - b;
-            System.out.println(a + " - " + b + " = " + diff);
-        }
-        else if(isMultiply) {
-            multip = a * b;
-            System.out.println(a + " * " + b + " = " + multip);
-        }
-        else if(isDivision) {
-            divis = a / b;
-            System.out.println(a + " / " + b + " = " + divis);
-        }
-        else if(isExponention) {
-            int result = a;
+        if(sign == '+') {
+            result = a + b;
+            System.out.println(a + " + " + b + " = " + result);
+        } else if(sign == '-') {
+            result = a - b;
+            System.out.println(a + " - " + b + " = " + result);
+        } else if(sign == '*') {
+            result = a * b;
+            System.out.println(a + " * " + b + " = " + result);
+        } else if(sign == '/') {
+            resultDivision = (float) a / b;
+            System.out.printf(a + " / " + b + " = " + "%.2f",resultDivision);
+        } else if(sign == '^') {
+            int result1 = a;
                 for(int i = 1; i <= b; i++) {
-                result *= a;
+                result1 *= a;
                 }
-        System.out.println(a + " to the " + b + "th degree is equal " + result);
-        } 
-        else { mod = a % b;
-        System.out.println("The remainder of dividing " + a + " by " + b + " is " + mod);
+            System.out.println(a + " to the " + b + "th degree is equal " + result1);
+        } else { 
+            result = a % b;
+            System.out.println("The remainder of dividing " + a + " by " + b + " is " + result);
         }
     }
 }
