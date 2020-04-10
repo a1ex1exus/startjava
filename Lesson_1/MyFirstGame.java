@@ -1,21 +1,21 @@
-public class MyFirstGame {
+public class Test {
     public static void main(String[] args) {
-        int secretNumber = 87;
-        int yourNumber = 33;
-        
+        int secretNumber = 89;
+        int yourNumber = 85;
+
         if(yourNumber > secretNumber) {
-            int i = yourNumber;
-            do { 
-                i--;
             System.out.println("The number you entered is greater than what the computer made.");
-            } while(i == secretNumber);
-        } else if(yourNumber < secretNumber) {
-            int i = yourNumber;
             do { 
-                i++;
+                yourNumber--;
+                System.out.println("Your attempt:" + yourNumber);
+            } while(yourNumber > secretNumber);
+        } else if(yourNumber < secretNumber) {
             System.out.println("The number you entered is less than what the computer made.");
-            } while(i == secretNumber);
+            do { 
+                yourNumber++;
+                System.out.println("Your attempt:" + yourNumber);
+            } while(yourNumber < secretNumber);
         }
-            System.out.println("You guessed!");
+        System.out.println("You guessed!");
     }
 }
