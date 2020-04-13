@@ -1,4 +1,5 @@
 public class Wolf {
+
     String gender = "Male";
     String nickname = "Ralf";
     String color = "black";
