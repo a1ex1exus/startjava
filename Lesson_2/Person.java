@@ -7,7 +7,7 @@ public class Person {
     int weight = 75;
     int walkingSpeed = 6;
     int runningSpeed = 10;
-    int age = 50;
+    int age = 55;
 
     void walk() {
         System.out.println(name + " goes at a speed of " + walkingSpeed + " km per hour");

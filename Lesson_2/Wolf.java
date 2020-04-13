@@ -3,7 +3,7 @@ public class Wolf {
     String nickname = "Ralf";
     String color = "black";
     float weight = 40.5f;
-    int age = 6;
+    int age = 7;
 
     void go() {
     }
