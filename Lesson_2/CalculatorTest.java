@@ -1,30 +1,27 @@
-
+import java.util.Scanner;
 
 public class CalculatorTest {
     public static void main(String[] args) {
-        Calculator CalculatorOne = new Calculator();
-
-        System.out.println("Enter any integer: ");
-        System.out.println(CalculatorOne.getNumber1());
-
+        Calculator calculator1 = new Calculator();
+        Scanner keyboard = new Scanner(System.in);
+        System.out.println(" Enter any integer: ");
+        calculator1.number1 = keyboard.nextInt();
         System.out.println("Enter the sign of the action you want to perform:+,-,*,/,^,%");
-        System.out.println(CalculatorOne.getMathSign());
-
+        calculator1.mathSign = keyboard.nextLine();
         System.out.println("Enter another integer: ");
-        System.out.println(CalculatorOne.getNumber2());
-
-        calculatorOne.addition();
-        calculatorOne.substruction();
-        calculatorOne.multyplyng();
-        calculatorOne.division();
-        calculatorOne.exponentiation();
-        calculatorOne.modulo();
-
-        System.out.println("Do you want to continue? Press y or n");
-        System.out.println(CalculatorOne.getChoice());
-
-        calculatorOne.imputMistake();
-        calculatorOne.exit();
-        calculatorOne.toContinue();
+        calculator1.number2 = keyboard.nextInt();
+        do {
+            calculator1.calculate();
+            System.out.println("Do you want to continue? Press y or n");
+            String choice = keyboard.next();
+            if(!choice.equalsIgnoreCase("n") && !choice.equalsIgnoreCase("y")) {
+                System.out.println("You are mistaken. Press y or n");
+                choice = keyboard.next();
+                }
+            if(choice.equalsIgnoreCase ("n")) {
+                System.out.println("Goodbye! Until next time!");
+                break;
+            } else {}
+        } while (true); 
     }
 }
