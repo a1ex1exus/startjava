@@ -1,8 +1,31 @@
 public class Calculator {
     private int number1;
     private int number2;
-    private char mathSigh;
+    private char mathSign;
     private int result;
+
+    public void setNumber1(int number1) {
+        this.number1 = number1;
+    }
+
+    // public int getNumber1() {
+    //     return number1;
+    // }
+
+    public void setNumber2(int number2) {
+        this.number2 = number2;
+    }
+    // // public int getNumber2() {
+    // //     return number2;
+    // }
+
+    public void  setMathSign(char mathSign) {
+        this.mathSign = mathSign;
+    }
+
+    // public char getMathSign() {
+    //     return mathSign;
+    // }
 
     public int calculate() {
         switch(mathSign) {
@@ -19,9 +42,8 @@ public class Calculator {
                 System.out.println(number1 + " * " + number2 + " = " + result);
                 break;
             case '/':
-                float resultDivision;
-                resultDevision = (float)number1 / number2;
-                System.out.printf(number1 + " / " + number2 + " = " + "%.2f\n", resultDivision);
+                result = number1 / number2;
+                System.out.printf(number1 + " / " + number2 + " = " + result);
                 break;
             case '^':   
                 result = number1;
