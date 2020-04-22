@@ -16,15 +16,17 @@ public class CalculatorTest {
 
             System.out.println("Do you want to continue? Press y or n");
             String choice = keyboard.next();
-                while(!choice.equalsIgnoreCase("n") && !choice.equalsIgnoreCase("y")) {
+            while(!choice.equalsIgnoreCase("n") && !choice.equalsIgnoreCase("y")) {
                 System.out.println("You are mistaken. Press y or n");
                 choice = keyboard.next();
-                    } if(choice.equalsIgnoreCase("n")) {
-                    System.out.println("Goodbye! Until next time!");
-                    break;
-                    } if(choice.equalsIgnoreCase("y")) {
-                    continue;
-                    }
+            }      
+            if(choice.equalsIgnoreCase("n")) {
+                System.out.println("Goodbye! Until next time!");
+                break;
+            }
+            if(choice.equalsIgnoreCase("y")) {
+                continue;
+            }
         }
     }
 }

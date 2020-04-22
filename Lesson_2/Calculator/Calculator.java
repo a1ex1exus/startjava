@@ -16,7 +16,7 @@ public class Calculator {
         this.mathSign = mathSign;
     }
 
-     public void calculate() {
+    public void calculate() {
         switch(mathSign) {
             case '+':
                 result = number1 + number2;
@@ -37,7 +37,7 @@ public class Calculator {
             case '^':   
                 result = number1;
                 for(int i = 1; i < number2; i++) {
-                result *= number1;
+                    result *= number1;
                 }
                 System.out.println(number1 + " to the " + number2 + "th degree is equal " + result);
                 break;
