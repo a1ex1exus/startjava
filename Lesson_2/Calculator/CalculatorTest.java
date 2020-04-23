@@ -3,8 +3,8 @@ import java.util.Scanner;
 public class CalculatorTest {
     public static void main(String[] args) {
         Scanner keyboard = new Scanner(System.in);
-        String choice;
-        do {
+        String choice = "y";
+        while(choice.equalsIgnoreCase("y")) {
             Calculator calculator = new Calculator();
             System.out.println("Enter any integer: ");
             calculator.setNumber1(keyboard.nextInt());
@@ -21,7 +21,7 @@ public class CalculatorTest {
                 System.out.println("You are mistaken. Press y or n");
                 choice = keyboard.next();
             }      
-        } while(choice.equalsIgnoreCase("y")); 
+        }  
     System.out.println("Goodbye! Until next time!");
     }
 }
