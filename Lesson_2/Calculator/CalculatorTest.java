@@ -22,6 +22,6 @@ public class CalculatorTest {
                 choice = keyboard.next();
             }      
         }  
-    System.out.println("Goodbye! Until next time!");
+        System.out.println("Goodbye! Until next time!");
     }
 }
