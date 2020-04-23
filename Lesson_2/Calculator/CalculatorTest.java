@@ -2,9 +2,10 @@ import java.util.Scanner;
 
 public class CalculatorTest {
     public static void main(String[] args) {
-        while(true) {
+        Scanner keyboard = new Scanner(System.in);
+        String choice;
+        do {
             Calculator calculator = new Calculator();
-            Scanner keyboard = new Scanner(System.in);
             System.out.println("Enter any integer: ");
             calculator.setNumber1(keyboard.nextInt());
             System.out.println("Enter the sign of the action you want to perform:+,-,*,/,^,%.");
@@ -15,18 +16,12 @@ public class CalculatorTest {
             calculator.calculate();
 
             System.out.println("Do you want to continue? Press y or n");
-            String choice = keyboard.next();
+            choice = keyboard.next();
             while(!choice.equalsIgnoreCase("n") && !choice.equalsIgnoreCase("y")) {
                 System.out.println("You are mistaken. Press y or n");
                 choice = keyboard.next();
             }      
-            if(choice.equalsIgnoreCase("n")) {
-                System.out.println("Goodbye! Until next time!");
-                break;
-            }
-            if(choice.equalsIgnoreCase("y")) {
-                continue;
-            }
-        }
+        } while(choice.equalsIgnoreCase("y")); 
+    System.out.println("Goodbye! Until next time!");
     }
 }
