@@ -15,7 +15,7 @@ public class Player {
         if((attempt > 100) && (attempt < 1)) {
             System.out.println("The number you entered is less than 1 or greater than 100. Repeat the enter.");
         } else { 
-        this.attempt = attempt;
+            this.attempt = attempt;
         }    
     }
     public int getAttempt() {
