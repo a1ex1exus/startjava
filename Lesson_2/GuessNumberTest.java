@@ -8,6 +8,7 @@ public class GuessNumberTest {
         String name = keyboard.nextLine();
         Player player1 = new Player(name);
 
+
         System.out.println("Player 2, please enter your name.");
         name = keyboard.nextLine();
         Player player2 = new Player(name);
