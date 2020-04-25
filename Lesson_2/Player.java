@@ -21,6 +21,4 @@ public class Player {
     public int getAttempt() {
         return attempt;
     }
-
 }
-
