@@ -14,19 +14,18 @@ public class GuessNumberTest {
 
         GuessNumber guessNumber = new GuessNumber(player1, player2);
 
-        do {
+        String choice = "y";
+        while(choice.equalsIgnoreCase("y")) {
+
             guessNumber.play();
 
             System.out.println("Do you want to continue? Press y or n");
-            String choice = keyboard.next();
+            choice = keyboard.next();
             while(!choice.equalsIgnoreCase("n") && !choice.equalsIgnoreCase("y")) {
                 System.out.println("You are mistaken. Press y or n");
                 choice = keyboard.next();
-            }
-            if(choice.equalsIgnoreCase("n")) {
-                System.out.println("Goodbye! Until next time!");
-                break;
-            }
-        } while(true);
+            }   
+        }
+        System.out.println("Goodbye! Until next time!");
     }
 }

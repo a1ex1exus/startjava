@@ -1,7 +1,7 @@
 public class Player {
 
     private String name;
-    private int attempt;
+    private int number;
 
     public Player(String name) {
         this.name = name;
@@ -11,14 +11,15 @@ public class Player {
         return name;
     }
 
-    public void setAttempt(int attempt) {
-        if((attempt > 100) && (attempt < 1)) {
+    public void setNumber(int number) {
+        if((number > 100) && (number < 1)) {
             System.out.println("The number you entered is less than 1 or greater than 100. Repeat the enter.");
         } else { 
-            this.attempt = attempt;
+            this.number = number;
         }    
     }
-    public int getAttempt() {
-        return attempt;
+
+    public int getNumber() {
+        return number;
     }
 }

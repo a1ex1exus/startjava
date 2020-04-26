@@ -12,37 +12,37 @@ public class GuessNumber {
     }
 
     public void play() {
-
         Scanner keyboard = new Scanner(System.in);
         Random rand = new Random();
         int randomNumber = rand.nextInt(100) + 1;
 
         System.out.println("Ok, let's play!");
-        int attemptNumber = 0;
-        while(attemptNumber < 20) {
-            attemptNumber++;
+        int counter = 0;
+        while(counter < 20) {
+            counter++;
             System.out.println(player1.getName() + ", enter any integer from 1 to 100.");
-            player1.setAttempt(keyboard.nextInt());
-            if(randomNumber < player1.getAttempt()) {
-                System.out.println(player1.getName() + ", you entered number " + player1.getAttempt() + ". It is greater than the computer made up.");
+            player1.setNumber(keyboard.nextInt());
+            if(randomNumber < player1.getNumber()) {
+                System.out.println(player1.getName() + ", you entered number " + player1.getNumber() + ". It is greater than the computer made up.");
                 System.out.println("And now another player is trying to guess.");
-            } else if(randomNumber > player1.getAttempt()) {
-                System.out.println(player1.getName() + ", you entered number " + player1.getAttempt() + ". It is less than the computer made up.");
+            } else if(randomNumber > player1.getNumber()) {
+                System.out.println(player1.getName() + ", you entered number " + player1.getNumber() + ". It is less than the computer made up.");
                 System.out.println("Now another player is trying to guess.");
-            } else if (randomNumber == player1.getAttempt()) {
-                System.out.println(player1.getName() + ", you guessed from attempt number " + attemptNumber + ". \nYou won!");
+            } else if (randomNumber == player1.getNumber()) {
+                System.out.println(player1.getName() + ", you guessed from attempt number " + counter + ". \nYou won!");
                 break;
             }
+
             System.out.println(player2.getName() + ", enter any integer from 1 to 100.");
-            player2.setAttempt(keyboard.nextInt());
-            if(randomNumber < player2.getAttempt()) {
-                System.out.println(player2.getName() + ", you entered number " + player2.getAttempt() + ". It is greater than the computer made up.");
+            player2.setNumber(keyboard.nextInt());
+            if(randomNumber < player2.getNumber()) {
+                System.out.println(player2.getName() + ", you entered number " + player2.getNumber() + ". It is greater than the computer made up.");
                 System.out.println("And now another player is trying to guess.");
-            } else if(randomNumber > player2.getAttempt()) {
-                System.out.println(player2.getName() + ", you entered number " + player2.getAttempt() + ". It is less than the computer made up.");
+            } else if(randomNumber > player2.getNumber()) {
+                System.out.println(player2.getName() + ", you entered number " + player2.getNumber() + ". It is less than the computer made up.");
                 System.out.println("Now another player is trying to guess.");
-            } else if(randomNumber == player2.getAttempt()) {
-                System.out.println(player2.getName() + ", you guessed from attempt number " + attemptNumber + ". \nYou won!");
+            } else if(randomNumber == player2.getNumber()) {
+                System.out.println(player2.getName() + ", you guessed from attempt number " + counter + ". \nYou won!");
                 break;
             }
         }
