@@ -1,4 +1,6 @@
-public class Test {
+package com.startjava.lesson_1.game;
+
+public class MyFirstGame {
     public static void main(String[] args) {
         int secretNumber = 89;
         int yourNumber = 85;
