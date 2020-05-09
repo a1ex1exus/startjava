@@ -26,7 +26,7 @@ public class GuessNumberTest {
             while(!choice.equalsIgnoreCase("n") && !choice.equalsIgnoreCase("y")) {
                 System.out.println("You are mistaken. Press y or n");
                 choice = keyboard.next();
-            }   
+            }
         }
         System.out.println("Goodbye! Until next time!");
     }

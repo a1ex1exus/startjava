@@ -5,10 +5,10 @@ import java.util.Scanner;
 
 public class GuessNumber {
 
-    public Player player1;
-    public Player player2;
+    private Player player1;
+    private Player player2;
 
-    public GuessNumber(Player player1, Player player2) {
+    GuessNumber(Player player1, Player player2) {
         this.player1 = player1;
         this.player2 = player2;
     }
@@ -22,42 +22,31 @@ public class GuessNumber {
         System.out.println("Ok, let's play! You have 10 attempts.");
 
         for (int i = 0; i < player1.getNumbers().length; i++) {
-            System.out.println(player1.getName() + ", enter any integer from 1 to 100.");
-            int userNumber = keyboard.nextInt();
-            player1.addNumber(i, userNumber);
-            if (randomNumber < userNumber) {
-                System.out.println(player1.getName() + ", you entered number " + userNumber + ". It is greater than the computer made up.");
-                System.out.println("And now another player is trying to guess.");
-            } else if (randomNumber > userNumber) {
-                System.out.println(player1.getName() + ", you entered number " + userNumber + ". It is less than the computer made up.");
-                System.out.println("Now another player is trying to guess.");
-            } else  {
-                System.out.println(player1.getName() + ", you guessed number " + userNumber + " from attempt number " + i + ". \nYou won!");
-                guessed = true;
+            String player1Name = player1.getName();
+            int number = enterNumber(keyboard, player1Name);
+            player1.addNumberToArray(i, number);
+            if (player1.checkNumber(number, randomNumber, i)) {
+               guessed = true;
                 break;
             }
 
-            System.out.println(player2.getName() + ", enter any integer from 1 to 100.");
-            userNumber = keyboard.nextInt();
-            player2.addNumber(i, userNumber);
-            if (randomNumber < userNumber) {
-                System.out.println(player2.getName() + ", you entered number " + userNumber + ". It is greater than the computer made up.");
-                System.out.println("And now another player is trying to guess.");
-            } else if (randomNumber > userNumber) {
-                System.out.println(player2.getName() + ", you entered number " + userNumber + ". It is less than the computer made up.");
-                System.out.println("Now another player is trying to guess.");
-            } else {
-                System.out.println(player2.getName() + ", you guessed number " + userNumber + " from attempt number " + i + ". \nYou won!");
+            number = enterNumber(keyboard, player2.getName());
+            player2.addNumberToArray(i, number);
+            if (player2.checkNumber(number, randomNumber, i)) {
                 guessed = true;
                 break;
             }
         }
         if (!guessed) {
-            gameOver(randomNumber);
+            finishGame(randomNumber);
         }
     }
+    private int enterNumber(Scanner keyboard, String name) {
+        System.out.println(name + ", enter any integer from 1 to 100.");
+        return keyboard.nextInt();
+    }
 
-    void gameOver(int randomNumber) {
+    void finishGame(int randomNumber) {
         System.out.println(player1.getName() + " ran out of attempts. Game over.");
         System.out.println("Computer made up a number: " + randomNumber);
         System.out.println(player1.getName() + " entered the numbers: " + printNumbers(player1.getNumbers()));
