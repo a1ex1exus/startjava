@@ -1,5 +1,6 @@
 package lesson_4.game;
 
+import java.util.Random;
 import java.util.Scanner;
 
 public class GuessNumberTest {
@@ -14,11 +15,13 @@ public class GuessNumberTest {
         name = keyboard.nextLine();
         Player player2 = new Player(name);
 
-        GuessNumber guessNumber = new GuessNumber(player1, player2);
+        Random rand = new Random();
+        int randomNumber = rand.nextInt(100) + 1;
+
+        GuessNumber guessNumber = new GuessNumber(player1, player2, randomNumber);
 
         String choice = "y";
         while(choice.equalsIgnoreCase("y")) {
-
             guessNumber.play();
 
             System.out.println("Do you want to continue? Press y or n");

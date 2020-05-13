@@ -8,6 +8,15 @@ public class Player {
         this.name = name;
     }
 
+    public Player (String name, int[] numbers) {
+        this.name = name;
+        this.numbers = numbers;
+    }
+
+    public Player getAll(String name, int [] numbers) {
+        return Player(name, numbers);
+    }
+
     public String getName() {
         return name;
     }
@@ -15,5 +24,5 @@ public class Player {
     public int[] getNumbers() {
         return numbers;
     }
+ }
 
-}
