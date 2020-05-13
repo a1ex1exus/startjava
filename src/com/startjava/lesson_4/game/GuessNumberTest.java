@@ -21,12 +21,12 @@ public class GuessNumberTest {
         GuessNumber guessNumber = new GuessNumber(player1, player2, randomNumber);
 
         String choice = "y";
-        while(choice.equalsIgnoreCase("y")) {
+        while (choice.equalsIgnoreCase("y")) {
             guessNumber.play();
 
             System.out.println("Do you want to continue? Press y or n");
             choice = keyboard.next();
-            while(!choice.equalsIgnoreCase("n") && !choice.equalsIgnoreCase("y")) {
+            while (!choice.equalsIgnoreCase("n") && !choice.equalsIgnoreCase("y")) {
                 System.out.println("You are mistaken. Press y or n");
                 choice = keyboard.next();
             }
