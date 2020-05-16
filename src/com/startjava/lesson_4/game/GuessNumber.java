@@ -17,30 +17,19 @@ public class GuessNumber {
 
     public void play() {
         System.out.println("Ok, let's play! You have 10 attempts.");
-        int[] numbers1 = new int[0];
-        int[] numbers2 = new int[0];
         boolean guessed = false;
 
         for (int i = 0; i < player1.getNumbers().length; i++) {
+            player1.setAttempt(player1.getAttempt() + 1);
             enterNumber(player1, i);
             if (checkNumber(player1, i)) {
                 guessed = true;
-                numbers1 = Arrays.copyOf(player1.getNumbers(), i + 1);
-                numbers2 = Arrays.copyOf(player2.getNumbers(), i);
-
-                Arrays.fill(player1.getNumbers(), 0, i + 1, 0);
-                Arrays.fill(player2.getNumbers(), 0, i, 0);
                 break;
             }
-
+            player2.setAttempt(player2.getAttempt() + 1);
             enterNumber(player2, i);
             if (checkNumber(player2, i)) {
                 guessed = true;
-                numbers1 = Arrays.copyOf(player1.getNumbers(), i + 1);
-                numbers2 = Arrays.copyOf(player2.getNumbers(), i + 1);
-
-                Arrays.fill(player1.getNumbers(), 0, i + 1, 0);
-                Arrays.fill(player2.getNumbers(), 0, i + 1, 0);
                 break;
             }
         }
@@ -48,7 +37,9 @@ public class GuessNumber {
             System.out.println(player1.getName() + " ran out of attempts. Game over.");
         }
 
-        printNumbers(numbers1, numbers2);
+        System.out.println("Computer made up a number: " + randomNumber);
+        printNumbers(player1);
+        printNumbers(player2);
 
     }
 
@@ -66,9 +57,10 @@ public class GuessNumber {
     private boolean checkNumber(Player pl, int i) {
         String name = pl.getName();
         int number = pl.getNumbers()[i];
+        int attempt = pl.getAttempt();
         if (randomNumber == number) {
             System.out.println(name + ", you guessed number " + number
-                    + " from attempt number " + (i + 1) + ". \nYou won!");
+                    + " from attempt number " + attempt + ". \nYou won!");
             return true;
         } else if (randomNumber < number) {
             System.out.println(name + ", you entered number " + number
@@ -82,11 +74,11 @@ public class GuessNumber {
         return false;
     }
 
-    private void printNumbers(int[] numbers1, int[] numbers2) {
-        System.out.println("Computer made up a number: " + randomNumber);
-        System.out.println(player1.getName() + " entered the numbers: "
-                + Arrays.toString(numbers1));
-        System.out.println(player2.getName() + " entered the numbers: "
-                + Arrays.toString(numbers2));
+    private void printNumbers(Player pl) {
+        int[] numbers = Arrays.copyOf(pl.getNumbers(), pl.getAttempt());
+        System.out.println(pl.getName() + " entered the numbers: "
+                + Arrays.toString(numbers));
+        Arrays.fill(pl.getNumbers(), 0, pl.getAttempt(), 0);
+        pl.setAttempt(0);
     }
 }
